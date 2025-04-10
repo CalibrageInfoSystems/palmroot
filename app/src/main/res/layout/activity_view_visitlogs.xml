@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ViewVisitlogs"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/applaout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_margin="5dp"
+        android:layout_below="@+id/applaout"
+        android:weightSum="1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_weight="0.2"
+            android:weightSum="1"
+            android:background="@drawable/background"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_from_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+
+                android:layout_gravity="center"
+                android:textColorHint="@color/black"
+                android:layout_weight="0.4"
+
+
+                >
+
+                <EditText
+                    android:id="@+id/from_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"
+                    android:hint="From Date"
+                    android:inputType="date"
+                    android:textSize="20dp"
+                    android:focusable="false"
+                    android:textColor="@color/black"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txt_to_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:clipChildren="false"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                >
+
+                <EditText
+                    android:id="@+id/to_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="10"
+                    android:inputType="date"
+                    android:hint="To Date"
+                    android:textSize="20dp"
+                    android:focusable="false"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--                <com.google.android.material.textfield.TextInputLayout-->
+            <!--                    android:id="@+id/textInputLayout"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginStart="16dp"-->
+            <!--                    android:layout_marginLeft="16dp"-->
+            <!--                    android:layout_marginTop="50dp"-->
+            <!--                    android:layout_marginEnd="16dp"-->
+            <!--                    android:layout_marginRight="16dp"-->
+            <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                    app:layout_constraintStart_toStartOf="parent"-->
+            <!--                    app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                    <EditText-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:hint="Username" />-->
+
+            <!--                </com.google.android.material.textfield.TextInputLayout>-->
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                style="@style/basicBtnStyle"
+
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_weight="0.2"
+                android:background="@color/green"
+                android:text="submit"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/reg_logo"
+            android:fontFamily="Roboto_Regular"
+
+            android:gravity="bottom"
+            android:paddingLeft="15dp"
+            android:text="Nursery Visit Logs"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/recyclerviewlayout"
+            android:visibility="visible"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical"
+            android:layout_weight="0.8"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                card_view:cardCornerRadius="2dp"
+                card_view:cardElevation="2dp"
+                card_view:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:background="@color/light_gray"
+                    android:id="@+id/mainlyt"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/image_more"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="46dp"-->
+<!--                        android:src="@drawable/ic_expand_more_black_24dp"-->
+<!--                        android:visibility="invisible">-->
+
+<!--                    </ImageView>-->
+<!--                    <ImageView-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:id="@+id/image_less"-->
+<!--                        android:src="@drawable/ic_expand_less_black_24dp"></ImageView>-->
+
+                    <TextView
+                        android:gravity="center"
+                        android:layout_weight="0.2"
+                        android:textColor="@color/black"
+                        android:text="Nursery Name"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text="Log Type"
+                        android:layout_weight="0.11"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+
+
+                    <TextView
+                        android:gravity="center"
+                        android:text="Consignment Code"
+                        android:layout_weight="0.19"
+                        android:textColor="@color/black"
+                        android:id="@+id/CosignmentCode"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+
+
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text="Client Name"
+                        android:layout_weight="0.13"
+                        android:textColor="@color/black"
+                        android:id="@+id/ClientName"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text="Log Date"
+                        android:layout_weight="0.1"
+                        android:textColor="@color/black"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text="Comments "
+                        android:layout_weight="0.17"
+                        android:textColor="@color/black"
+                        android:id="@+id/Comments"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                    <LinearLayout
+                        android:background="@color/black"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:gravity="center"
+                        android:text=" Picture "
+                        android:layout_weight="0.1"
+                        android:textColor="@color/black"
+                        android:id="@+id/visitLogimage"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/visitlogsRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nodata"
+                android:visibility="gone"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:text="No Data Found"
+                android:textSize="16dp"
+                android:textColor="@color/colorAccent"
+                android:layout_centerInParent="true"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

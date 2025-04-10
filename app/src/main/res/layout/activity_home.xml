@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.calibrage.nurserymanagement.ui.HomeActivity">
+    <LinearLayout
+        android:id="@+id/refreshRel1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:background="#f8cebc"
+        android:gravity="center_vertical">
+
+        <!-- Left-aligned Image -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:src="@drawable/homelogo_palm"
+            />
+
+        <!-- This View acts as a Spacer to push right image to the end -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:id="@+id/notficationRel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/refreshRel1">
+
+            <ImageView
+                android:id="@+id/alertsIcon"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+
+                android:src="@drawable/notifications_bell_button"
+                tools:ignore="ContentDescription" />
+
+            <com.github.pavlospt.CircleView
+                android:id="@+id/countTxt"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignEnd="@+id/alertsIcon"
+                android:layout_alignParentTop="true"
+                app:cv_backgroundColorValue="@color/gray"
+                app:cv_fillColor="@color/red"
+                app:cv_fillRadius="0.9"
+                app:cv_strokeColorValue="@color/green"
+                app:cv_strokeWidthSize="5"
+                app:cv_subtitleSize="9dp"
+                app:cv_subtitleText=""
+                app:cv_titleColor="@color/white"
+                app:cv_titleSize="25dp"
+                app:cv_titleText="0" />
+
+        </RelativeLayout>
+
+        <!-- Right-aligned Image -->
+        <ImageView
+            android:id="@+id/refresh_logo1"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+
+            android:src="@drawable/syncicon_inside"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+<!--    <LinearLayout-->
+<!--        android:id="@+id/refreshRel1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:elevation="10dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="2dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:background="@color/gray"-->
+<!--            android:layout_marginRight="15dp"-->
+<!--            android:padding="2dp"/>-->
+<!--        <ImageView-->
+
+<!--            android:id="@+id/refresh_logo1"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:src="@drawable/sync_homelogo_nerw"-->
+<!--            android:visibility="visible" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:layout_gravity="start"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/sync"-->
+<!--            android:textSize="20sp"-->
+<!--            android:visibility="gone" />-->
+
+<!--    </LinearLayout>-->
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/notficationRel"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_toStartOf="@+id/refreshRel1">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/alertsIcon"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            android:src="@drawable/notifications_bell_button"-->
+<!--            tools:ignore="ContentDescription" />-->
+
+<!--        <com.github.pavlospt.CircleView-->
+<!--            android:id="@+id/countTxt"-->
+<!--            android:layout_width="35dp"-->
+<!--            android:layout_height="35dp"-->
+<!--            android:layout_alignEnd="@+id/alertsIcon"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            app:cv_backgroundColorValue="@color/gray"-->
+<!--            app:cv_fillColor="@color/red"-->
+<!--            app:cv_fillRadius="0.9"-->
+<!--            app:cv_strokeColorValue="@color/green"-->
+<!--            app:cv_strokeWidthSize="5"-->
+<!--            app:cv_subtitleSize="9dp"-->
+<!--            app:cv_subtitleText=""-->
+<!--            app:cv_titleColor="@color/white"-->
+<!--            app:cv_titleSize="25dp"-->
+<!--            app:cv_titleText="0" />-->
+
+<!--    </RelativeLayout>-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="2dp"
+        android:background="@color/gray"
+       >
+
+    </View>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="73dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <!-- Row 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+                <!-- Option 1 -->
+                <LinearLayout
+                    android:id="@+id/newactivityRel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_light_blue"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/extension_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/area_extension_homelogo_new" />
+
+                    <TextView
+                        android:id="@+id/reg_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="New Activity"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Option 2 -->
+                <LinearLayout
+                    android:id="@+id/checkactivityRel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_white"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/pf_farmers_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/checkactivity" />
+
+                    <TextView
+                        android:id="@+id/todo_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Check Activity"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Row 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+                <!-- Option 1 -->
+                <LinearLayout
+                    android:id="@+id/irigationdetails_post"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_white"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/irigation_Icon_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/secondaryirrigation" />
+
+                    <TextView
+                        android:id="@+id/irigation_title_txt_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Irrigation Log"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Option 2 -->
+                <LinearLayout
+                    android:id="@+id/IrrigationRel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_light_blue"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/conversion_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nurseryactivity" />
+
+                    <TextView
+                        android:id="@+id/conversion_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Irrigation Status info"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Row 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+                <!--                 Option 1 -->
+                <LinearLayout
+                    android:id="@+id/nurserylabourlogsrel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_light_blue"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nurseryactivity" />
+
+                    <TextView
+                        android:id="@+id/nurserylabourlogs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Nursery Labour Log"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+                <!--                 Option 2 -->
+                <LinearLayout
+                    android:id="@+id/consignment_report"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_white"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/consignment_icon_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/primaryirrigation" />
+
+                    <TextView
+                        android:id="@+id/consignment_title_txt_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Consignment View Details"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Row 4 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:id="@+id/Nurseryvisitlogs"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_white"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/visilogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nurseryactivity" />
+
+                    <TextView
+                        android:id="@+id/visit_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Nursery Visit Log"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/viewNurseryvisitlogs"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_light_blue"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/viewvisitlogo"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/nurseryactivity" />
+
+                    <TextView
+                        android:id="@+id/Nurseryvisitlogsview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="View Nursery Visit Log"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Row 5 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="horizontal">
+
+                <!-- Option 1 -->
+                <LinearLayout
+                    android:id="@+id/nurseryrm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/bg_tile_light_blue"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/nurseryrm_Icon_post"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/secondaryirrigation" />
+
+                    <TextView
+                        android:id="@+id/nurseryrm_txt_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Nursery R&amp;M"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/irigationdetails"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:background="@drawable/bg_tile_white"
+                    android:layout_margin="8dp"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/irigation_Icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:maxWidth="100dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/secondaryirrigation" />
+
+                    <TextView
+                        android:id="@+id/irigation_title_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/moduleHomeBtnStyle"
+                        android:text="Irrigation Log"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

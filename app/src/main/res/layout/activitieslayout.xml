@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+   >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        card_view:cardCornerRadius="2dp"
+        card_view:cardElevation="2dp"
+        card_view:cardUseCompatPadding="true">
+
+        <LinearLayout
+
+            android:id="@+id/mainlyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/activityName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.2"
+                android:gravity="center"
+                android:textColor="@color/black" />
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+            <TextView
+                android:gravity="center"
+                android:text=""
+                android:layout_weight="0.15"
+                android:textColor="@color/black"
+                android:id="@+id/expecteddate"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+            <TextView
+                android:gravity="center"
+                android:text="partially approved"
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:id="@+id/txtStatusTxt"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+
+            <ImageView
+                android:padding="10dp"
+
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:id="@+id/imgStatus"
+                android:src="@drawable/done"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+
+            <TextView
+                android:id="@+id/txtDoneDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="0.15"
+                android:text=" "
+                android:textColor="@color/black" />
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+            <ImageView
+                android:padding="10dp"
+                android:src="@drawable/done"
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:id="@+id/imgNurStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+<!--            <ImageView-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/done"-->
+<!--                android:layout_weight="0.08"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:id="@+id/imgNurStatus"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content" />-->
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+            <ImageView
+                android:padding="10dp"
+                android:src="@drawable/done"
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:id="@+id/imgShStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+<!--            <ImageView-->
+<!--                android:padding="10dp"-->
+<!--                android:src="@drawable/done"-->
+<!--                android:layout_weight="0.08"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:id="@+id/imgShStatus"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content" />-->
+
+            <LinearLayout
+                android:background="@color/black"
+                android:layout_width="1dp"
+                android:layout_height="100dp"/>
+
+            <ImageView
+                android:id="@+id/imglossStatus"
+                android:padding="10dp"
+                android:src="@drawable/done"
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:layout_width="0dp"
+              android:visibility="gone"
+                android:layout_height="wrap_content" />
+            <TextView
+               android:text="NA"
+
+                android:layout_weight="0.1"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:id="@+id/imglossStatustext"
+              android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

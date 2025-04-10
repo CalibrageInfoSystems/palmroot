@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="2dp"
+        card_view:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/labour_request"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="1"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:id="@+id/fieldname"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Field Id"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <TextView
+
+                    android:id="@+id/value"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:textSize="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/lyt_requestCode">-->
+<!--                <TextView-->
+
+<!--                    android:layout_weight="0.4"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="InputType"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--                <TextView-->
+
+<!--                    android:id="@+id/inputtype"-->
+<!--                    android:layout_weight="0.6"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--            </LinearLayout>-->
+
+<!--            <LinearLayout-->
+<!--                android:orientation="horizontal"-->
+<!--                android:weightSum="1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/lyt_startDate">-->
+<!--                <TextView-->
+
+<!--                    android:layout_weight="0.4"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="Value"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--                <TextView-->
+
+<!--                    android:id="@+id/value"-->
+<!--                    android:layout_weight="0.6"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:textColor="@color/black"/>-->
+<!--            </LinearLayout>-->
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.Activities"
+    android:background="@color/white">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/applaout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+   <LinearLayout
+      android:layout_margin="05dp"
+       android:layout_below="@+id/applaout"
+       android:weightSum="1"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="0.2"
+            android:weightSum="1"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <LinearLayout
+
+                android:gravity="top"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="0dp">
+                <TextView
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+
+                    android:layout_weight="0.4"
+                    android:id="@+id/consignmentTxt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Consignment Code" />
+                <TextView
+
+                    android:textColor="@color/black"
+                    android:layout_weight="0.6"
+                    android:id="@+id/txtSlectedConsiment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Select Consignment " />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="0dp">
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Consignment Status" />
+                <TextView
+                    android:id="@+id/txtSatus"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_weight="0.2"
+                android:layout_height="0dp">
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Sapling Type" />
+                <TextView
+                    android:id="@+id/txtType"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Aproved" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:id="@+id/layout"
+                android:layout_weight="0.2"
+                android:layout_height="0dp">
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                    android:text="Sapling Age in Day(s)" />
+                <TextView
+
+                    android:id="@+id/txtAge"
+                    android:textColor="@color/black"
+                    android:layout_weight="0.6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_logo"
+                    android:fontFamily="Roboto_Regular"
+                    android:gravity="bottom"
+                     />
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/layout"
+                    android:layout_weight="0.2"
+                    android:layout_height="0dp">
+                    <TextView
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:fontFamily="Roboto_Regular"
+                        android:gravity="bottom"
+                        android:text="Date of Sowing" />
+                    <TextView
+
+                        android:id="@+id/txtDateOfsowing"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/reg_logo"
+                        android:fontFamily="Roboto_Regular"
+                        android:gravity="bottom"
+                        />
+                </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--                <TextView-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_weight="0.4"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/reg_logo"-->
+<!--                    android:fontFamily="Roboto_Regular"-->
+<!--                    android:gravity="bottom"-->
+<!--                    android:text="Date of Sowing" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/txtDateOfsowing"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:layout_weight="0.6"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+
+<!--                    android:fontFamily="Roboto_Regular"-->
+<!--                    android:gravity="bottom"-->
+<!--                    />-->
+<!--            </LinearLayout>-->
+
+
+        </LinearLayout>
+       <TextView
+           android:textSize="20dp"
+           android:paddingLeft="15dp"
+           android:textStyle="bold"
+           android:textColor="@color/black"
+
+           android:layout_width="wrap_content"
+           android:layout_height="50dp"
+           android:layout_below="@+id/reg_logo"
+           android:fontFamily="Roboto_Regular"
+           android:gravity="bottom"
+           android:text="Actvities List" />
+       <LinearLayout
+           android:id="@+id/recyclerviewlayout"
+           android:visibility="visible"
+           android:layout_marginBottom="20dp"
+           android:orientation="vertical"
+           android:layout_weight="0.8"
+           android:layout_width="match_parent"
+           android:layout_height="0dp">
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/card_view"
+               android:layout_width="match_parent"
+               android:layout_height="80dp"
+               android:layout_gravity="center"
+               card_view:cardCornerRadius="2dp"
+               card_view:cardElevation="2dp"
+               card_view:cardUseCompatPadding="true">
+
+               <LinearLayout
+android:background="@color/light_gray"
+                   android:id="@+id/mainlyt"
+                   android:layout_width="match_parent"
+                   android:layout_height="80dp"
+                   android:orientation="horizontal"
+                   android:weightSum="1">
+
+
+                   <TextView
+                       android:gravity="center"
+                       android:layout_weight="0.2"
+                       android:textColor="@color/black"
+                      android:text="Activity"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                       android:text="Target Date "
+                       android:layout_weight="0.15"
+                       android:textColor="@color/black"
+                       android:id="@+id/expecteddate"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+
+                   <TextView
+                       android:gravity="center"
+                      android:text="Status "
+                       android:layout_weight="0.1"
+                       android:textColor="@color/black"
+                       android:id="@+id/txtSatusText"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                       android:text="Activity Done"
+                       android:layout_weight="0.1"
+                       android:textColor="@color/black"
+
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                       android:text="Activity Done Date"
+                       android:layout_weight="0.15"
+                       android:textColor="@color/black"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                      android:text="Nur Mgr"
+                       android:layout_weight="0.1"
+                       android:textColor="@color/black"
+                       android:id="@+id/imgNurStatus"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                      android:text="SH"
+                       android:layout_weight="0.1"
+                       android:textColor="@color/black"
+                       android:id="@+id/imgShStatus"
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+                   <LinearLayout
+                       android:background="@color/black"
+                       android:layout_width="1dp"
+                       android:layout_height="match_parent"/>
+                   <TextView
+                       android:gravity="center"
+                       android:text=" AH "
+                       android:layout_weight="0.1"
+                       android:textColor="@color/black"
+
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent" />
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/activitiesRecyclerview"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
+       </LinearLayout>
+
+
+   </LinearLayout>
+
+
+</RelativeLayout>
