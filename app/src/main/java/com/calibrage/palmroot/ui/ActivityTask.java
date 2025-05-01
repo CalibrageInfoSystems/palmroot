@@ -2221,8 +2221,9 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
 
 // Set margin (left, top, right, bottom)
         params.setMargins(0, 10, 0,0 ); // Example: 20dp top and bottom margin
-
-        TextInputLayout textInputLayout = new TextInputLayout(this, null, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
+//TODO Widget_MaterialComponents_TextInputLayout_OutlinedBox
+      //  TextInputLayout textInputLayout = new TextInputLayout(this, null, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
+        TextInputLayout textInputLayout = new TextInputLayout(this, null);
         textInputLayout.setId(id + 9000);
         textInputLayout.setHintTextAppearance(R.style.text_in_layout_hint_Style);
         textInputLayout.setHint(content);

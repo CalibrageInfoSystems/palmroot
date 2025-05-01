@@ -237,16 +237,8 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.btsynctoserver:
-
-//                List<UserSync> traList = (List<UserSync>)dataAccessHandler.getUserSyncData(Queries.getInstance().countOfTraSync());
-//                Log.v("@@@MM","trasize"+traList.size());
-//                if(traList.size()==0){
-//                    Log.v("@@@MM","mas");
-//                    addUserTraSyncDetails();
-//                }
+        int id = v.getId();
+        if (id == R.id.btsynctoserver) {
 
                 if (CommonUtils.isNetworkAvailable(RefreshSyncActivity.this)) {
 
@@ -290,9 +282,7 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
                 }
 
 
-                break;
-
-            case R.id.btnmastersync:
+        } else if (id == R.id.btnmastersync) {
 
                 if (CommonUtils.isNetworkAvailable(RefreshSyncActivity.this)) {
                     DataSyncHelper.performMasterSync(this, false, new ApplicationThread.OnComplete() {
@@ -302,18 +292,7 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
                             if (success) {
                                 if (!msg.equalsIgnoreCase("Sync is up-to-date")) {
                                     Toast.makeText(RefreshSyncActivity.this, "Data synced successfully", Toast.LENGTH_SHORT).show();
-                                    // List<UserSync> userSyncList = (List<UserSync>)dataAccessHandler.getUserSyncData(Queries.getInstance().countOfMasterSync());
-//                                    List<UserSync> userSyncList = (List<UserSync>) dataAccessHandler.getUserSyncData(Queries.getInstance().countOfSync());
-//
-//                                    if (userSyncList.size() == 0) {
-//                                        Log.v("@@@MM", "mas");
-//                                        addUserMasSyncDetails();
-//                                    } else {
-//                                        dataAccessHandler.updateMasterSync();
-//                                    }
-//                                    dataAccessHandler.updateMasterSync();
-                                    // DataAccessHandler dataAccessHandler = new DataAccessHandler(RefreshSyncActivity.this);
-                                    // dataAccessHandler.updateMasterSyncDate(false, CommonConstants.USER_ID);
+
                                 } else {
                                     ApplicationThread.uiPost(LOG_TAG, "master sync message", new Runnable() {
                                         @Override
@@ -336,15 +315,13 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
                 } else {
                     UiUtils.showCustomToastMessage("Please check network connection", RefreshSyncActivity.this, 1);
                 }
-                break;
-            case R.id.btcopydatabase:
-                showAlertDialog();
-                break;
-            default:
-                break;
+
+        } else if (id == R.id.btcopydatabase) {
+            showAlertDialog();
+        }
         }
 
-    }
+
 
     public void showAlertDialog() {
         final Dialog dialog = new Dialog(RefreshSyncActivity.this);

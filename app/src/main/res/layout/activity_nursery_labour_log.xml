@@ -148,6 +148,7 @@
                         android:textSize="20dp"
                         android:inputType="number"
                         android:maxLength="4"
+                        style="@style/editTxt_normal"
                         android:textAlignment="textStart"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
@@ -159,6 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10"
                     android:weightSum="1">
 
                     <TextView
@@ -178,6 +180,7 @@
                         android:inputType="number"
                         android:maxLength="4"
                         android:textAlignment="textStart"
+                        style="@style/editTxt_normal"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:hint="Man Days - Female"/>
@@ -202,6 +205,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+
                     android:weightSum="1">
 
                     <TextView
@@ -218,6 +222,7 @@
                         android:layout_weight="0.5"
                         android:layout_width="0dp"
                         android:textSize="20dp"
+                        style="@style/editTxt_normal"
                         android:inputType="number"
                         android:textAlignment="textStart"
                         android:maxLength="4"
@@ -231,6 +236,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_10"
                     android:weightSum="1">
 
                     <TextView
@@ -250,6 +256,7 @@
                         android:inputType="number"
                         android:textSize="20dp"
                         android:maxLength="4"
+                        style="@style/editTxt_normal"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:hint="Man Days - Female"/>

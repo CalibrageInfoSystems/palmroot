@@ -27,7 +27,7 @@
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_gravity="start"
-            android:src="@drawable/homelogo_palm"
+            android:src="@drawable/logopalmroot"
             />
 
         <!-- This View acts as a Spacer to push right image to the end -->
@@ -38,7 +38,7 @@
 
         <RelativeLayout
             android:id="@+id/notficationRel"
-            android:layout_width="100dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/refreshRel1">
@@ -46,17 +46,17 @@
             <ImageView
                 android:id="@+id/alertsIcon"
                 android:layout_width="40dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-
+                android:layout_marginEnd="16dp"
                 android:src="@drawable/notifications_bell_button"
                 tools:ignore="ContentDescription" />
 
             <com.github.pavlospt.CircleView
                 android:id="@+id/countTxt"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignEnd="@+id/alertsIcon"
                 android:layout_alignParentTop="true"
                 app:cv_backgroundColorValue="@color/gray"
@@ -71,7 +71,6 @@
                 app:cv_titleText="0" />
 
         </RelativeLayout>
-
         <!-- Right-aligned Image -->
         <ImageView
             android:id="@+id/refresh_logo1"
@@ -205,7 +204,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/area_extension_homelogo_new" />
+                        android:src="@drawable/newactivity" />
 
                     <TextView
                         android:id="@+id/reg_title_txt"
@@ -278,7 +277,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/secondaryirrigation" />
+                        android:src="@drawable/irrigationlog" />
 
                     <TextView
                         android:id="@+id/irigation_title_txt_post"
@@ -311,7 +310,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/nurseryactivity" />
+                        android:src="@drawable/irrigationinfo" />
 
                     <TextView
                         android:id="@+id/conversion_title_txt"
@@ -352,7 +351,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/nurseryactivity" />
+                        android:src="@drawable/labourlist" />
 
                     <TextView
                         android:id="@+id/nurserylabourlogs"
@@ -384,7 +383,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/primaryirrigation" />
+                        android:src="@drawable/consignment" />
 
                     <TextView
                         android:id="@+id/consignment_title_txt_post"
@@ -425,7 +424,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/nurseryactivity" />
+                        android:src="@drawable/visitlog" />
 
                     <TextView
                         android:id="@+id/visit_title_txt"
@@ -457,7 +456,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/nurseryactivity" />
+                        android:src="@drawable/viewlog" />
 
                     <TextView
                         android:id="@+id/Nurseryvisitlogsview"
@@ -498,7 +497,7 @@
                         android:maxWidth="100dp"
                         android:adjustViewBounds="true"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/secondaryirrigation" />
+                        android:src="@drawable/randm" />
 
                     <TextView
                         android:id="@+id/nurseryrm_txt_post"

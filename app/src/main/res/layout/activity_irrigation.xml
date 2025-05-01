@@ -163,6 +163,7 @@
                         android:layout_width="0dp"
                         android:textSize="20dp"
                         android:inputType="numberDecimal"
+                        style="@style/editTxt_normal"
                         android:maxLength="4"
                         android:textAlignment="textStart"
                         android:layout_height="match_parent"
@@ -175,6 +176,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
                     android:weightSum="1">
 
                     <TextView
@@ -193,6 +195,7 @@
                         android:textSize="20dp"
                         android:inputType="numberDecimal"
                         android:maxLength="4"
+                        style="@style/editTxt_normal"
                         android:textAlignment="textStart"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
@@ -218,6 +221,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
                     android:weightSum="1">
 
                     <TextView
@@ -236,6 +240,7 @@
                         android:textSize="20dp"
                         android:inputType="numberDecimal"
                         android:textAlignment="textStart"
+                        style="@style/editTxt_normal"
                         android:maxLength="4"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
@@ -247,6 +252,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_marginTop="5dp"
                     android:weightSum="1">
 
                     <TextView
@@ -266,6 +272,7 @@
                         android:inputType="numberDecimal"
                         android:textSize="20dp"
                         android:maxLength="4"
+                        style="@style/editTxt_normal"
                         android:layout_height="match_parent"
                         android:textColor="@color/black"
                         android:hint="Man Days - Female"/>

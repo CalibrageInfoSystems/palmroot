@@ -15,26 +15,37 @@
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
+            android:id="@+id/mainnlyt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:id="@+id/mainnlyt"
-            android:padding="16dp">
+            android:orientation="horizontal"
 
+            android:padding="10dp">
+            <View
+                android:id="@+id/statusColorStrip"
+                android:layout_width="6dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="8dp"
+                android:background="@color/green" />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
             <!-- Consignment ID -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Consignment Id"
                 android:textColor="#666"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
             <TextView
                 android:id="@+id/consignmentcode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textStyle="bold"
-                android:textSize="14sp"
+                android:textSize="18sp"
                 android:layout_marginTop="2dp"
                 />
 
@@ -53,7 +64,7 @@
                     android:text="Status"
                     android:layout_marginTop="12dp"
                     android:textColor="#666"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:gravity="start" />
 
                 <TextView
@@ -62,12 +73,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text=""
-                    android:textSize="12sp"
-                    android:layout_marginStart="8dp"
+                    android:textSize="18sp"
+
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="2dp"
-                    android:background="@drawable/bg_status_primary"
-                    android:textColor="@android:color/holo_green_dark"
+
                     android:layout_marginTop="12dp"
                     android:gravity="start" />
 
@@ -134,14 +144,14 @@
                         android:layout_height="wrap_content"
                         android:text="Origin Name"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/originname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <!-- Vendor Name -->
@@ -158,14 +168,14 @@
                         android:layout_height="wrap_content"
                         android:text="Vendor Name"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/vendorName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <!-- Variety Name -->
@@ -182,14 +192,14 @@
                         android:layout_height="wrap_content"
                         android:text="Variety Name"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/vareityName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                     <ImageView
                         android:id="@+id/imageView"
                         android:layout_weight="0.1"
@@ -214,14 +224,14 @@
                         android:layout_height="wrap_content"
                         android:text="Estimated Quantity"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/estimatedQty"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
                 <!-- Ordered Date -->
@@ -238,14 +248,14 @@
                         android:layout_height="wrap_content"
                         android:text="Ordered Date"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/ordereddate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
 
 
@@ -265,14 +275,14 @@
                         android:layout_height="wrap_content"
                         android:text="Arrival Date"
                         android:textColor="#666"
-                        android:textSize="12sp" />
+                        android:textSize="16sp" />
                     <TextView
                         android:id="@+id/arrivaldate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
                         android:textStyle="bold"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </LinearLayout>
             </GridLayout>
 
@@ -290,7 +300,7 @@
                     android:text="Arrived Quantity"
                     android:layout_marginTop="12dp"
                     android:textColor="#666"
-                    android:textSize="14sp"
+                    android:textSize="16sp"
                     android:gravity="start" />
 
                 <TextView
@@ -302,10 +312,12 @@
                     android:textStyle="bold"
                     android:layout_marginTop="12dp"
                     android:textColor="#000"
-                    android:textSize="14sp"
+                    android:textSize="18sp"
                     android:gravity="start" />
             </LinearLayout>
         </LinearLayout>
+        </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>
