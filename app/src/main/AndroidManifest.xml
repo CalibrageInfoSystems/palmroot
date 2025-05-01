@@ -54,7 +54,11 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:exported="true" />
-
+        <activity
+            android:name=".ui.Cons_Reports_Screen"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true" />
         <activity
             android:name=".ui.RMActivityFields"
             android:theme="@style/AppTheme.NoActionBar"
@@ -176,7 +180,6 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-=======
->>>>>>> f3b212ec4d28186275884216b114d2917071a9ff
+
 
 </manifest>

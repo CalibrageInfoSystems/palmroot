@@ -89,6 +89,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
                         android:weightSum="1">
 
                         <TextView
@@ -117,6 +118,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
                         android:id="@+id/consignment_linear"
                         android:weightSum="1">
 
@@ -146,6 +148,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
                         android:weightSum="1">
 
                         <TextView
@@ -165,6 +168,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="0.5"
                             android:hint="ClientName"
+                            style="@style/editTxt_normal"
                             android:textAlignment="textStart"
                             android:textColor="@color/black"
                             android:textSize="20dp" />
@@ -173,6 +177,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
                         android:weightSum="1">
 
                         <TextView
@@ -191,6 +196,7 @@
                             android:layout_width="0dp"
                             android:textSize="20dp"
                             android:inputType="phone"
+                            style="@style/editTxt_normal"
                             android:maxLength="12"
                             android:textAlignment="textStart"
                             android:layout_height="match_parent"

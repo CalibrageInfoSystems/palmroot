@@ -55,10 +55,10 @@ public class  MainLoginScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    //    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         this.sync=(FloatingActionButton) findViewById(R.id.sync);
-        toolbar.setTitle(R.string.login_screen);
-        setSupportActionBar(toolbar);
+//        toolbar.setTitle(R.string.login_screen);
+//        setSupportActionBar(toolbar);
 
         dataAccessHandler = new DataAccessHandler(MainLoginScreen.this);
 

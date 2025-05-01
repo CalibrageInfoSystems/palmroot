@@ -48,6 +48,7 @@ android:padding="@dimen/margin_5"
                     android:focusable="false"
                     android:hint="From Date"
                     android:inputType="date"
+                    style="@style/editTxt_normal"
                     android:maxLength="10"
                     android:textColor="@color/black"
 
@@ -71,6 +72,7 @@ android:padding="@dimen/margin_5"
                     android:layout_height="wrap_content"
                     android:maxLength="10"
                     android:inputType="date"
+                    style="@style/editTxt_normal"
                     android:hint="To Date"
                     android:focusable="false"
                     android:textColor="@color/black" />
@@ -85,7 +87,7 @@ android:padding="@dimen/margin_5"
                 android:layout_alignParentRight="true"
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
-                android:background="@color/green"
+
                 android:text="Search"
                 />
         </LinearLayout>
@@ -118,7 +120,7 @@ android:padding="@dimen/margin_5"
                 android:id="@+id/addBtn"
                 android:gravity="center_vertical"
                 style="@style/basicBtnStyle"
-                android:background="@color/green"
+
                 android:text="Add Transaction"
                 />
         </LinearLayout>

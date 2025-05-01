@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#f15f22</color>
+    <color name="colorPrimary">#6db049</color>
 
     <color name="colorPalmCornor">#fad4da</color>
 
-    <color name="recorder_bg">#F4511E</color>
+    <color name="recorder_bg">#559533</color>
 
     <color name="colorGray">#655F5F</color>
 
 
-    <color name="colorPrimaryDark">#f15f22</color>
+    <color name="colorPrimaryDark">#338109</color>
 
     <color name="colorAccent">#052353</color>
     <color name="header_txt">#000000</color>

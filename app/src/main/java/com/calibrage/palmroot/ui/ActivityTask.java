@@ -3,6 +3,7 @@ package com.calibrage.palmroot.ui;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -20,6 +21,8 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.text.method.DigitsKeyListener;
 import android.util.Pair;
+import android.view.ContextThemeWrapper;
+import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -755,8 +758,53 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
         ll.addView(addButton("Submit", ButtonId));
     }
 
-
     private View addFileimagebutton(Integer id) {
+        // Container with dashed border
+        LinearLayout container = new LinearLayout(this);
+        container.setId(id);
+        container.setOrientation(LinearLayout.VERTICAL);
+        container.setGravity(Gravity.CENTER);
+        container.setBackgroundResource(R.drawable.dashed_border);
+        LinearLayout.LayoutParams containerParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                200 // height
+        );
+        containerParams.setMargins(16, 16, 16, 16); // Optional margins
+        container.setLayoutParams(containerParams);
+
+        // ImageView inside container
+        FileImage = new ImageView(this);
+        FileImage.setId(ImageId);
+        FileImage.setPadding(5, 5, 5, 10);
+
+
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(200, 200);
+        FileImage.setLayoutParams(lp);
+        FileImage.setImageResource(R.drawable.addimage);
+
+
+        FileImage.setOnClickListener(v1 -> {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && (!CommonUtils.isPermissionAllowed(this, Manifest.permission.CAMERA))) {
+                android.util.Log.v(LOG_TAG, "Camera Permissions Not Granted");
+                ActivityCompat.requestPermissions(
+                        this,
+                        PERMISSIONS_STORAGE,
+                        REQUEST_CAM_PERMISSIONS
+                );
+            } else {
+                takePhotoFromCamera();
+            }
+        });
+
+
+      //  return FileImage;
+        container.addView(FileImage);
+        return container;
+    }
+
+
+
+/*    private View addFileimagebutton(Integer id) {
 
 
         FileImage = new ImageView(this);
@@ -785,7 +833,7 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
 
         return FileImage;
 
-    }
+    }*/
 
     private void takePhotoFromCamera() {
         Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
@@ -2170,7 +2218,25 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
 
         cb.setPadding(20, 10, 20, 10);
 
+// Create ColorStateList for the checkbox tint
+        ColorStateList colorStateList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_checked}, // checked
+                        new int[]{-android.R.attr.state_checked} // unchecked
+                },
+                new int[]{
+                        ContextCompat.getColor(this, R.color.colorPrimary), // checked color
+                        ContextCompat.getColor(this, android.R.color.darker_gray) // unchecked color
+                }
+        );
+
+// Apply tint to checkbox
+        cb.setButtonTintList(colorStateList);
+
+// Click listener (optional logic)
         cb.setOnClickListener(this::onClick);
+
+//        cb.setOnClickListener(this::onClick);
         Log.d(ActivityTask.class.getSimpleName(), "===> Analysis YES NO CHK  ID:  before Assign :" + id + "And Name :" + content);
         if (id == 173 || id == 72 || id == 79 || id == 95 || id == 101 || id == 112 || id == 121 || id == 130 || id == 139 || id == 149 || id == 164 || id == 253 || id == 259 || id == 269 || id == 280 || id == 289 || id == 298 || id == 307 || id == 317 || id == 332 || id == 341 || id == 368 || id == 385 || id == 391 || id == 397 || id == 403 || id == 414 || id == 423 || id == 432 || id == 611 || id == 626 || id == 641 || id == 656 || id == 671 || id == 686 || id == 701 || id == 716 || id == 731 || id == 746 || id == 761 || id == 776 || id == 1079 || id == 1088 || id == 1097 || id == 1106 || id == 1115 || id == 1124 || id == 1133 || id == 1142 || id == 1151 || id == 1160 || id == 1169 || id == 1178 || id == 1178 || id == 1187 || id == 1196 || id == 1205 || id == 1214 || id == 1223 || id == 1230 || id == 1236 || id == 1242 || id == 1249 || id == 1255 || id == 1261 || id == 1268 || id == 1274 || id == 1280 || id == 1287 || id == 1293 || id == 1317 || id == 1323 || id == 1329 || id == 1335 || id == 1341 || id == 1347 || id == 1353 || id == 1359 || id == 1365 || id == 1371 || id == 1382 || id == 1393 || id == 1402 || id == 1411 || id == 1420 || id == 1429 || id == 1438 || id == 1447 || id == 1457 || id == 1470 || id == 1476 || id == 1482 || id == 1488 || id == 1494 || id == 1500 || id == 1506 || id == 1512 || id == 1518 || id == 1524 || id == 1530 || id == 1536 || id == 1542 || id == 1548 || id == 1554 || id == 1560 || id == 1566 || id == 1572 || id == 1578 || id == 1584 || id == 1590 || id == 1596 || id == 1602 || id == 1617 || id == 1632 || id == 1647 || id == 1662 || id == 1677 || id == 1692 || id == 1707 || id == 1722 || id == 1737 || id == 1832 || id == 1841 || id == 1850 || id == 1859 || id == 1868 || id == 1877 || id == 1886 || id == 1895 || id == 1904 || id == 1913 || id == 2022 || id == 2031 || id == 2040 || id == 2049 || id == 2058 || id == 2067 || id == 2076 || id == 2085 || id == 1187 || id == 1196 || id == 1205 || id == 1214 || id == 1223 || id == 1230 || id == 1236 || id == 1242 || id == 1249 || id == 2094 || id == 2103 || id == 2112 || id == 2123 || id == 2145 || id == 2156 || id == 2167 || id == 2178 || id == 2189 || id == 2200 || id == 2211 || id == 2222 || id == 2231 || id == 2240 || id == 2249 || id == 2258 || id == 2267 || id == 2276 || id == 2285 || id == 2294 || id == 2303 || id == 2312 || id == 2321 || id == 2330 || id == 2339 || id == 2348 || id == 2357 || id == 2366 || id == 2375 || id == 2384 || id == 2393 || id == 2402 || id == 2411 || id == 2420 || id == 2429 || id == 2438 || id == 2447 || id == 2456 || id == 2465 || id == 2474 || id == 2483 || id == 2492 || id == 2502 || id == 2512 || id == 2522 || id == 2532 || id == 2542 || id == 2552 || id == 2562 || id == 2572 || id == 2582 || id == 2592 || id == 2598 || id == 2604 || id == 2610 || id == 2621 || id == 2632 || id == 2643 || id == 2654 || id == 2663 || id == 2672 || id == 2681 || id == 2690 || id == 2699 || id == 2708 || id == 2717 || id == 2726 || id == 2735 || id == 2744 || id == 2753 || id == 2762 || id == 2772 || id == 2782 || id == 2792 || id == 2802 || id == 2817 || id == 2832 || id == 2847 || id == 2894 || id == 2903 || id == 2912 || id == 2921 || id == 2970 || id == 2979 || id == 3006 || id == 3012 || id == 3018 || id == 3024 || id == 3030 || id == 3036 || id == 3042 || id == 3048 || id == 3054 || id == 3062 || id == 3077 ||
                 id == 1752 || id == 1922 || id == 350 || id == 358 || id == 1760 || id == 1932 || id == 2134 ||
@@ -2222,7 +2288,13 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
 // Set margin (left, top, right, bottom)
         params.setMargins(0, 10, 0,0 ); // Example: 20dp top and bottom margin
 
-        TextInputLayout textInputLayout = new TextInputLayout(this, null, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
+   //  TextInputLayout textInputLayout = new TextInputLayout(this, null, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
+ // TextInputLayout textInputLayout = new TextInputLayout(this, null, R.style.RoundedTextInputLayout);
+        TextInputLayout textInputLayout = new TextInputLayout(
+                new ContextThemeWrapper(this, R.style.RoundedTextInputLayout),
+                null
+        );
+
         textInputLayout.setId(id + 9000);
         textInputLayout.setHintTextAppearance(R.style.text_in_layout_hint_Style);
         textInputLayout.setHint(content);
@@ -2237,12 +2309,15 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
         et.setTextSize(16); // Use SP units in layout; 16 is standard
         et.setMinLines(1);
         et.setMaxLines(1);
+        et.setBackground(null);
         et.setPadding(20,20,20,20);
-        et.setHintTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
-
+        et.setHintTextColor(ContextCompat.getColor(this, R.color.header_txt));
         et.setSingleLine(true);
-        et.setBackground(null); // Important: remove default EditText underline
         et.setOnFocusChangeListener(this::onFocusChange);
+        et.setHintTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
+        textInputLayout.setDefaultHintTextColor(ColorStateList.valueOf(
+                ContextCompat.getColor(this, R.color.colorGray)
+        ));
 
 // Add EditText to TextInputLayout
        // textInputLayout.addView(et);
@@ -2566,16 +2641,16 @@ public class ActivityTask extends AppCompatActivity implements View.OnClickListe
         tv.setText(content);
         return tv;
     }
-
     public Button addButton(String content, int id) {
         Button btn = new Button(this);
         btn.setText(content);
         btn.setTextColor(Color.WHITE);
-        btn.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+        btn.setBackgroundResource(R.drawable.rounded_button); // Use drawable with radius
         btn.setId(id);
         btn.setOnClickListener(this::onClick);
         return btn;
     }
+
     private void saveData() {
 
 

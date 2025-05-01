@@ -5,21 +5,22 @@ import com.calibrage.palmroot.BuildConfig;
 public class Config {
 
     public static final boolean DEVELOPER_MODE = false;
-
-public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api"; //localtest
+    public static String live_url = "http://182.18.157.215/Palm360/API/api"; //Local test
+    //public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api"; //localtest
    // public static String live_url = "http://192.168.1.118/Smartpalm/API/api";
 //public static String live_url = "http://182.18.157.215/3FOilPalmNursery_TestLive/API/api"; //Nursery_TestLive
 
     public static void initialize() {
         if (BuildConfig.BUILD_TYPE.equalsIgnoreCase("release")) {
         //    live_url = "http://192.168.1.118/Smartpalm/API/api";
-
-live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//localtest
+            live_url = "http://182.18.157.215/Palm360/API/api";
+//live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//localtest
 //live_url = "http://182.18.157.215/3FOilPalmNursery_TestLive/API/api"; //Nursery_TestLive
 
          } else {
      //       live_url = "http://192.168.1.118/Smartpalm/API/api";
-live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//localtest
+            live_url = "http://182.18.157.215/Palm360/API/api";
+//live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//localtest
 //live_url = "http://182.18.157.215/3FOilPalmNursery_TestLive/API/api"; //Nursery_TestLive
 
         }
