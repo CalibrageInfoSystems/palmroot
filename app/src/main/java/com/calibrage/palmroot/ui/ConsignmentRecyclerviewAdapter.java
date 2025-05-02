@@ -2,6 +2,7 @@ package com.calibrage.palmroot.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,6 +41,9 @@ public class ConsignmentRecyclerviewAdapter extends RecyclerView.Adapter<Consign
 
     }
 
+//    <!--                    android:background="@drawable/bg_status_primary"-->
+//<!--                    android:textColor="@android:color/holo_green_dark"-->
+
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -59,8 +63,50 @@ public class ConsignmentRecyclerviewAdapter extends RecyclerView.Adapter<Consign
         holder.originname.setText( consignmentList.get(position).getOriginname());
         holder.vendorname.setText( consignmentList.get(position).getVendorname());
         holder.varietyname.setText( consignmentList.get(position).getVarietyname());
-        holder.txtStatusTxt.setText( consignmentList.get(position).getStatus());
+//        holder.txtStatusTxt.setText( consignmentList.get(position).getStatus());
 
+        String status = consignmentList.get(position).getStatus();
+
+        View strip = holder.statusColorStrip;
+        holder.txtStatusTxt.setText("     "+status);
+
+        holder.txtStatusTxt.setGravity(View.TEXT_ALIGNMENT_CENTER);
+
+// Reset default background
+        holder.txtStatusTxt.setBackground(null);
+
+// Change background based on status
+        switch (status.toLowerCase()) {
+            case "primary":
+                strip.setBackgroundColor(Color.parseColor("#00C853")); // Green
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_primary);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#0F5132")); // dark green text
+                break;
+
+            case "pre arrival":
+                strip.setBackgroundColor(Color.parseColor("#FFD600")); // Yellow// light yellow bg
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_prearrival);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#795548")); // brown
+                break;
+
+            case "secondary":
+                strip.setBackgroundColor(Color.parseColor("#2962FF")); // Blue; // light blue
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_secondary);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#1565C0")); // blue
+                break;
+
+            case "teritory":
+                strip.setBackgroundColor(Color.parseColor("#D50000")); // Red // pink
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_teritory);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#880E4F")); // dark pink
+                break;
+
+            default:
+                strip.setBackgroundColor(Color.GRAY); // fallback
+                holder.txtStatusTxt.setBackgroundColor(Color.GRAY);
+                holder.txtStatusTxt.setTextColor(Color.WHITE);
+                break;
+        }
 
 
         holder.estimatedqty.setText(consignmentList.get(position).getEstimatedQuantity() + "");
@@ -125,6 +171,7 @@ public class ConsignmentRecyclerviewAdapter extends RecyclerView.Adapter<Consign
 
         public TextView consignmentcode, originname, vendorname, varietyname, estimatedqty, ordereddate, arrivaldate, arrivedqty, txtStatusTxt;
         LinearLayout mainlyt, lytarrivaldate, lytarrivedqty;
+        View statusColorStrip;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -141,8 +188,10 @@ public class ConsignmentRecyclerviewAdapter extends RecyclerView.Adapter<Consign
             this.lytarrivaldate = itemView.findViewById(R.id.lytarrivaldate);
             this.lytarrivedqty = itemView.findViewById(R.id.lytarrivedqty);
             this.txtStatusTxt = itemView.findViewById(R.id.txtStatusTxt);
+            this.statusColorStrip = itemView.findViewById(R.id.statusColorStrip);
 
             mainlyt = (LinearLayout) itemView.findViewById(R.id.mainnlyt);
+
 
         }
     }
