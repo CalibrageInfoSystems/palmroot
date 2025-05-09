@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/logoLayout"
-            android:background="@drawable/palm_root_logo">
+            android:background="@drawable/palmroot">
         </RelativeLayout>
 
         <!-- Text below the logo -->

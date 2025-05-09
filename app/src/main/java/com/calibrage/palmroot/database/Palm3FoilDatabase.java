@@ -117,19 +117,6 @@ public class Palm3FoilDatabase extends SQLiteOpenHelper {
 
 
 
-
-    /*  private boolean checkDataBase() {
-        boolean dataBaseExisted = false;
-        try {
-            String check_Path = DB_PATH + DATABASE_NAME;
-            mSqLiteDatabase = SQLiteDatabase.openDatabase(check_Path, null, SQLiteDatabase.OPEN_READWRITE);
-        } catch (Exception ex) {
-            // TODO: handle exception
-            ex.printStackTrace();
-        }
-        return mSqLiteDatabase != null;
-    }
-*/
     private void copyFile(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
         int read;
@@ -151,62 +138,6 @@ public class Palm3FoilDatabase extends SQLiteOpenHelper {
     }
 
 
-    //FLOG_TRACKING......
-    public boolean insertLatLong (double Latitude, double Longitude,String IsActive,String CreatedByUserId, String CreatedDate,String UpdatedByUserId,  String UpdatedDate, String IMEINumber, String ServerUpdatedStatus) {
-//        SQLiteDatabase db = this.getWritableDatabase();
-
-        try {
-            openDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("UserId",CreatedByUserId);
-            contentValues.put(DatabaseKeys.LATITUDE,Latitude);
-            contentValues.put(DatabaseKeys.LONGITUDE,Longitude);
-            contentValues.put("Address", "Testin");
-            contentValues.put("LogDate",UpdatedDate);
-            contentValues.put("ServerUpdatedStatus",0);
-
-            mSqLiteDatabase.insert(DatabaseKeys.TABLE_Location_TRACKING_DETAILS, null, contentValues);
-            Log.v("userdata","data for user"+contentValues);
-        }catch (Exception e){
-            Log.v("UserDetails","Data insert failed due to"+e);
-        }
-
-        return true;
-    }
-    public boolean insertLogDetails(String ClientName,String MobileNumber,String Location,String Details,float Latitude,float Longitude,String ServerUpdatedStatus ){
-        try {
-            openDatabase();
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("ClientName",ClientName);
-            contentValues.put("MobileNumber", MobileNumber);
-            contentValues.put("Location",Location);
-            contentValues.put("Details",Details);
-            contentValues.put("Latitude",Latitude);
-            contentValues.put("Longitude",Longitude);
-            contentValues.put("CreatedByUserId",CommonConstants.USER_ID);
-            contentValues.put("CreatedDate",CommonUtils.getcurrentDateTime(CommonConstants.DATE_FORMAT_DDMMYYYY_HHMMSS));
-            contentValues.put("ServerUpdatedStatus",0);
-
-            mSqLiteDatabase.insert(DatabaseKeys.TABLE_VisitLog, null, contentValues);
-            Log.v("logdetails","Log Detaails are inserted sucessfully"+contentValues);
-        }catch (Exception e){
-            Log.v("logdetails","Log Detaails are not inserted"+e);
-        }
-        return true;
-    }
-
-    /* Open the database */
-    public void openDataBase() throws SQLException {
-
-        String check_Path = DB_PATH + DATABASE_NAME;
-        if (mSqLiteDatabase != null) {
-            mSqLiteDatabase.close();
-            mSqLiteDatabase = null;
-            mSqLiteDatabase = SQLiteDatabase.openDatabase(check_Path, null, SQLiteDatabase.OPEN_READWRITE);
-        } else {
-            mSqLiteDatabase = SQLiteDatabase.openDatabase(check_Path, null, SQLiteDatabase.OPEN_READWRITE);
-        }
-    }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -218,11 +149,5 @@ public class Palm3FoilDatabase extends SQLiteOpenHelper {
 
     }
 
-    public void openDatabase() {
-        String dbPath = mContext.getDatabasePath(DATABASE_NAME).getPath();
-        if(mSqLiteDatabase != null && mSqLiteDatabase.isOpen()) {
-            return;
-        }
-        mSqLiteDatabase = SQLiteDatabase.openDatabase(dbPath, null, SQLiteDatabase.OPEN_READWRITE);
-    }
+
 }

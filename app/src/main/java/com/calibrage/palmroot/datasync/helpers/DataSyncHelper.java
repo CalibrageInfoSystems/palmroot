@@ -404,14 +404,7 @@ public static String str;
         sharedPreferences.edit().putString(PREVIOUS_SYNC_DATE, date).apply();
     }
 
-    public static void ableToProceedToTransactionSync(final String password, final ApplicationThread.OnComplete onComplete) {
-        CloudDataHandler.getGenericData(Config.live_url + String.format(Config.validateTranSync, password), new ApplicationThread.OnComplete<String>() {
-            @Override
-            public void execute(boolean success, String result, String msg) {
-                onComplete.execute(success, result, msg);
-            }
-        });
-    }
+
 
     private static void updateOrInsertData(final String tableName, List dataToInsert, String whereCondition, boolean recordExisted, DataAccessHandler dataAccessHandler, final ApplicationThread.OnComplete onComplete) {
         if (recordExisted) {
