@@ -8,14 +8,52 @@
     android:orientation="horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    <!--section1-->
     <LinearLayout
         android:id="@+id/refreshRel1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:elevation="10dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/gradient_appbar"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
 
+        <!-- Left-aligned Image -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="start"
+            android:src="@drawable/logopalmroot"
+            />
+
+
+        <!-- This View acts as a Spacer to push right image to the end -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Right-aligned Image -->
+        <ImageView
+            android:id="@+id/refresh_logo1"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+
+            android:src="@drawable/syncicon_inside"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+
+    <!--section1-->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+android:visibility="gone"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:orientation="horizontal"
@@ -73,7 +111,7 @@
         </RelativeLayout>
         <!-- Right-aligned Image -->
         <ImageView
-            android:id="@+id/refresh_logo1"
+
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_gravity="center_vertical"

@@ -1,3 +1,4 @@
+/*
 package com.calibrage.palmroot.ui;
 
 import android.Manifest;
@@ -347,4 +348,4 @@ public class FalogService extends Service implements LocationListener {
     public void onProviderDisabled(String provider) {
 
     }
-}
+}*/

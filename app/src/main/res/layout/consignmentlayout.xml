@@ -89,6 +89,14 @@
                     android:textColor="#666"
                     android:textSize="14sp"
                     android:gravity="start" />
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_weight="0.1"
+                    android:layout_width="wrap_content"
+android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_tick_point"
+                    />
 
             </LinearLayout>
 
@@ -200,14 +208,7 @@
                         android:text=""
                         android:textStyle="bold"
                         android:textSize="18sp" />
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_weight="0.1"
-                        android:layout_width="0dp"
-                        android:visibility="gone"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_tick_point"
-                        />
+
                 </LinearLayout>
 
                 <!-- Estimated Quantity -->
@@ -232,6 +233,7 @@
                         android:text=""
                         android:textStyle="bold"
                         android:textSize="18sp" />
+
                 </LinearLayout>
 
                 <!-- Ordered Date -->

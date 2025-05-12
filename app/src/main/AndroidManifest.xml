@@ -34,8 +34,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 
 
 
@@ -73,7 +72,11 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:exported="true" />
-
+        <activity
+            android:name=".ui.Cons_Reports_Screen"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true" />
         <activity
             android:name=".ui.ViewVisitlogs"
             android:theme="@style/AppTheme.NoActionBar" />

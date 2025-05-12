@@ -3,6 +3,7 @@ package com.calibrage.palmroot.ui.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -52,8 +53,83 @@ public class ConsignmentReportRecyclerviewAdapter extends RecyclerView.Adapter<C
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
+        holder.consignmentcode.setText( consignmentList.get(position).getConsignmentCode()+"");
+        holder.originname.setText( consignmentList.get(position).getOriginname());
+        holder.vendorname.setText( consignmentList.get(position).getVendorname());
+        holder.varietyname.setText( consignmentList.get(position).getVarietyname());
+//        holder.txtStatusTxt.setText( consignmentList.get(position).getStatus());
 
-        //final ConsignmentData model = consignmentList.get(position);
+        String status = consignmentList.get(position).getStatus();
+
+        View strip = holder.statusColorStrip;
+        holder.txtStatusTxt.setText("     "+status);
+
+        holder.txtStatusTxt.setGravity(View.TEXT_ALIGNMENT_CENTER);
+
+// Reset default background
+        holder.txtStatusTxt.setBackground(null);
+
+// Change background based on status
+        switch (status.toLowerCase()) {
+            case "primary":
+                strip.setBackgroundColor(Color.parseColor("#00C853")); // Green
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_primary);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#0F5132")); // dark green text
+                break;
+
+            case "pre arrival":
+                strip.setBackgroundColor(Color.parseColor("#FFD600")); // Yellow// light yellow bg
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_prearrival);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#795548")); // brown
+                break;
+
+            case "secondary":
+                strip.setBackgroundColor(Color.parseColor("#2962FF")); // Blue; // light blue
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_secondary);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#1565C0")); // blue
+                break;
+
+            case "teritory":
+                strip.setBackgroundColor(Color.parseColor("#D50000")); // Red // pink
+                holder.txtStatusTxt.setBackgroundResource(R.drawable.bg_status_teritory);
+                holder.txtStatusTxt.setTextColor(Color.parseColor("#880E4F")); // dark pink
+                break;
+
+            default:
+                strip.setBackgroundColor(Color.GRAY); // fallback
+                holder.txtStatusTxt.setBackgroundColor(Color.GRAY);
+                holder.txtStatusTxt.setTextColor(Color.WHITE);
+                break;
+        }
+
+
+        holder.estimatedqty.setText(consignmentList.get(position).getEstimatedQuantity() + "");
+//        holder.ordereddate.setText(":  " +  CommonUtils.getProperComplaintsDate(consignmentList.get(position).getCreatedDate()));
+        holder.ordereddate.setText( CommonUtils.getProperComplaintsDate2(consignmentList.get(position).getCreatedDate()));
+//        Log.d("ArrivedDate", consignmentList.get(position).getArrivedDate());
+
+        holder.lytarrivaldate.setVisibility(View.GONE);
+        holder.lytarrivedqty.setVisibility(View.GONE);
+        if (consignmentList.get(position).getArrivedDate() == null || consignmentList.get(position).getArrivedDate().equalsIgnoreCase("null") || consignmentList.get(position).getArrivedDate() == "null" || TextUtils.isEmpty(consignmentList.get(position).getArrivedDate())) {
+            holder.lytarrivaldate.setVisibility(View.GONE);
+            holder.arrivaldate.setText("" + "");
+
+        } else {
+            holder.lytarrivaldate.setVisibility(View.VISIBLE);
+            holder.arrivaldate.setText( CommonUtils.getProperComplaintsDate2(consignmentList.get(position).getArrivedDate())+"");
+
+        }
+
+        if (consignmentList.get(position).getArrivedQuantity() == 0 || TextUtils.isEmpty(consignmentList.get(position).getArrivedQuantity() + "")) {
+            holder.lytarrivedqty.setVisibility(View.GONE);
+            holder.arrivedqty.setText("" + "");
+        } else {
+            holder.lytarrivedqty.setVisibility(View.VISIBLE);
+            holder.arrivedqty.setText( consignmentList.get(position).getArrivedQuantity() + "");
+
+        }
+
+   /*     //final ConsignmentData model = consignmentList.get(position);
         Log.e("=============Satatus", consignmentList.get(position).getStatus()+"");
 
         holder.consignmentcode.setText( consignmentList.get(position).getConsignmentCode()+"");
@@ -89,7 +165,7 @@ public class ConsignmentReportRecyclerviewAdapter extends RecyclerView.Adapter<C
             holder.arrivedqty.setText( consignmentList.get(position).getArrivedQuantity() + "");
 
         }
-
+*/
         holder.mainlyt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -116,7 +192,7 @@ public class ConsignmentReportRecyclerviewAdapter extends RecyclerView.Adapter<C
 
         public TextView consignmentcode, originname, vendorname, varietyname, estimatedqty, ordereddate, arrivaldate, arrivedqty, txtStatusTxt;
         LinearLayout mainlyt, lytarrivaldate, lytarrivedqty;
-
+        View statusColorStrip;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -132,7 +208,7 @@ public class ConsignmentReportRecyclerviewAdapter extends RecyclerView.Adapter<C
             this.lytarrivaldate = itemView.findViewById(R.id.lytarrivaldate);
             this.lytarrivedqty = itemView.findViewById(R.id.lytarrivedqty);
             this.txtStatusTxt = itemView.findViewById(R.id.txtStatusTxt);
-
+            this.statusColorStrip = itemView.findViewById(R.id.statusColorStrip);
             mainlyt = (LinearLayout) itemView.findViewById(R.id.mainnlyt);
 
         }

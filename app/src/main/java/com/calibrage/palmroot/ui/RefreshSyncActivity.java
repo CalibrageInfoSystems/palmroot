@@ -146,15 +146,7 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View v) {
                 showTransactionsAlertDialog(false);
-//                List<UserSync> resetList = (List<UserSync>)dataAccessHandler.getUserSyncData(Queries.getInstance().countOfTraSync());
-//                List<UserSync> resetList = (List<UserSync>) dataAccessHandler.getUserSyncData(Queries.getInstance().countOfSync());
-//
-//                if (resetList.size() == 0) {
-//                    Log.v("@@@MM", "mas");
-//                    addUserTraSyncDetails();
-//                } else {
-//                    dataAccessHandler.updateTransactionSync();
-//                }
+
 
 
             }
@@ -487,10 +479,10 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
                         ProgressBar.hideProgressBar();
                         if (success) {
                             Log.v(LOG_TAG, "@@@ 3f db file upload success");
-                            CommonUtils.showToast("3f db file uploaded successfully", RefreshSyncActivity.this);
+                            CommonUtils.showToast("db file uploaded successfully", RefreshSyncActivity.this);
                         } else {
                             Log.v(LOG_TAG, "@@@ 3f db file upload failed due to " + msg);
-                            CommonUtils.showToast("3f db file upload failed due to" + msg, RefreshSyncActivity.this);
+                            CommonUtils.showToast("db file upload failed due to" + msg, RefreshSyncActivity.this);
                         }
                     }
                 });
