@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.github.pavlospt.CircleView;
 import com.calibrage.palmroot.R;
@@ -35,9 +36,9 @@ import java.util.List;
 
 public class  HomeActivity extends AppCompatActivity {
 
-    LinearLayout newactivity;
+    LinearLayout newactivity, nurserylabourlogsrel;
     LinearLayout irrigation;
-    LinearLayout irrigation_post,IrrigationRel,checkactivityRel,nurserylabourlogsrel,Nurseryvisitlogs,viewNurseryvisitlogs,nurseryrm,consignment_report;
+    LinearLayout irrigation_post,IrrigationRel,checkactivityRel ,Nurseryvisitlogs,viewNurseryvisitlogs,nurseryrm,consignment_report;
     LinkedHashMap<String, Pair> nurserydatamap = null;
     LinkedHashMap<String, Pair> consignmentdatamap = null;
     List<NurseryDetails> nurseryDetails;
@@ -60,8 +61,9 @@ public class  HomeActivity extends AppCompatActivity {
 
         newactivity = findViewById(R.id.newactivityRel);
         irrigation = findViewById(R.id.irigationdetails);
-        irrigation_post = findViewById(R.id.irigationdetails_post);
+        circleView = (CircleView) findViewById(R.id.countTxt);
         refreshRel = (LinearLayout) findViewById(R.id.refreshRel1);
+        irrigation_post = findViewById(R.id.irigationdetails_post);
         IrrigationRel =findViewById(R.id.IrrigationRel);
         checkactivityRel = findViewById(R.id.checkactivityRel);
         nurserylabourlogsrel = findViewById(R.id.nurserylabourlogsrel);
@@ -69,7 +71,6 @@ public class  HomeActivity extends AppCompatActivity {
         nurseryrm = findViewById(R.id.nurseryrm);
         consignment_report= findViewById(R.id.consignment_report);
         viewNurseryvisitlogs = findViewById(R.id.viewNurseryvisitlogs);
-        circleView = (CircleView) findViewById(R.id.countTxt);
         dataAccessHandler = new DataAccessHandler(this);
     }
 

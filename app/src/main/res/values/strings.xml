@@ -783,6 +783,8 @@
     <string name="irigation">Irrigation-Log Pre Nursery</string>
     <string name="irigationPost">Irrigation-Log Post Pre Nursery</string>
 
+    <string name="nursery_r_m"><![CDATA[Nursery R & M]]></string>
+
     <string name="title_activity_consignment_multi_selection_screen">
         ConsignmentMultiSelectionScreen
     </string>
